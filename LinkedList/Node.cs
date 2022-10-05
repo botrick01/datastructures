@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Stack
+namespace LinkedList
 {
     internal class Node<T>
     {
         public T Value { get; set; }
-        public Node<T> previousNode;
+        public Node<T>? nextNode;
 
-        public Node(T value, Node<T> _previousNode)
+        public Node(T value, Node<T>? _nextNode)
         {
-            previousNode = _previousNode;
+            nextNode = _nextNode;
             Value = value;
         }
     }
