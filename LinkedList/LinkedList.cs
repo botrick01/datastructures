@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    public class LinkedList<T>
+    public class LinkedList
     {
-        private Node<T> head;
-        public void insertFirst(T value)
+        private Node head;
+        public void insertFirst(object value)
         {
-            head = new Node<T>(value, head);
+            head = new Node(value, head);
         }
-        public void insertLast(T value)
+        public void insertLast(object value)
         {
-            Node<T> node = new Node<T>(value, null);
+            Node node = new Node(value, null);
             if(head == null)
             {
                 head = node;
             }
             else
             {
-                Node<T> currentNode = head;
+                Node currentNode = head;
                 while (currentNode.nextNode != null)
                 {
                     currentNode = currentNode.nextNode;
@@ -32,23 +32,37 @@ namespace LinkedList
             
         }
         
-        public void insertAt(T value, int position)
+        public void insertAt(object value, int position)
         {
-            Node<T> currentNode = head;
-            for (int i = 0; i < position; i++)
+            if (position == 0)
             {
-                currentNode = currentNode.nextNode;
+                insertFirst(value);
+                return;
             }
-            Node<T> node = new Node<T>(value, currentNode.nextNode);
-            currentNode = node;
+            int count = 0;
+            Node currentNode = head;
+            while (count < position - 1)
+            {
+                
+                if (currentNode.nextNode == null)
+                {
+                    Console.WriteLine(count + " doesn't exist");
+                    return;
+                }
+                currentNode = currentNode.nextNode;
+                count++;
+            }
+
+            Node node = new Node(value, currentNode?.nextNode);
+            currentNode.nextNode = node;
         }
-        public void Pop()
+        public void deleteFirst()
         {
             head = head.nextNode;
         }
         public int count()
         {
-            Node<T> node = head;
+            Node node = head;
             int i = 0;
             while (node != null)
             {
@@ -60,7 +74,7 @@ namespace LinkedList
         }
         public void printAllNodes()
         {
-            Node<T> current = head;
+            Node current = head;
             String printString = "";
             while (current != null)
             {
