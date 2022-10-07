@@ -14,11 +14,11 @@ namespace UnitTest
         public void SingleLinkedListTest()
         {
             LinkedList.LinkedList linkedList = new LinkedList.LinkedList();
-            linkedList.insertFirst(1);
-            linkedList.insertLast("last");
-            linkedList.insertAt("middle", 1);
-            linkedList.deleteFirst();
+            linkedList.insertLast(0);
+            linkedList.InsertAfter(1, 0);
             Assert.AreEqual(linkedList.count(), 2);
+            linkedList.DeleteNode(0);
+            Assert.AreEqual(linkedList.count(), 1);
         }
     }
 }
