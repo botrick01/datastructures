@@ -34,7 +34,7 @@ namespace LinkedList
 
         public void InsertAfter(object argNewNode, object argPreviousNode)
         {
-            Node PreviousNode = new Node(GetNode(argPreviousNode), null);
+            Node PreviousNode = GetNode(argPreviousNode);
             Node NewNode = new Node(argNewNode, PreviousNode?.nextNode);
             PreviousNode.nextNode = NewNode;
         }
@@ -66,7 +66,7 @@ namespace LinkedList
         public Node GetNode(object node)
         {
             Node currentNode = head;
-            while (currentNode.Value!.Equals(node))
+            while (!currentNode.Value.Equals(node))
             {
                 if (currentNode.nextNode == null)
                 {
@@ -84,14 +84,14 @@ namespace LinkedList
         {
             Node currentNode = head;
             Node previousNode = head;
-            while (currentNode!.Equals(argNode))
+            while (!currentNode.Value.Equals(argNode))
             {
                 if (currentNode.nextNode == null)
                 {
                     return false;
                 }
                 previousNode = currentNode;
-                currentNode = currentNode?.nextNode;
+                currentNode = currentNode.nextNode;
             }
             previousNode.nextNode = currentNode.nextNode ?? null;
             return true;

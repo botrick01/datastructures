@@ -9,9 +9,9 @@ class Program
         linkedList.insertLast(2);
         linkedList.insertLast(3);
         linkedList.insertLast(4);
-        linkedList.insertLast(5);
-        linkedList.InsertAfter(7, 4);
+        linkedList.DeleteNode(2);
+        linkedList.InsertAfter(2, 1);
         linkedList.printAllNodes();
-        Console.WriteLine(linkedList.GetNode(4));
+        Console.WriteLine(linkedList.GetNode(4).Value);
     }
 }
