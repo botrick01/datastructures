@@ -10,8 +10,10 @@ class Program
         linkedList.insertLast(3);
         linkedList.insertLast(4);
         linkedList.insertLast(5);
-        linkedList.InsertAfter(7, 4);
+        linkedList.insertLast(6);
+        linkedList.insertAt(7, 0);
+        linkedList.deleteFirst();
         linkedList.printAllNodes();
-        Console.WriteLine(linkedList.GetNode(4));
+        Console.WriteLine(linkedList.count());
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinkedList
 {
-    public class Node
+    internal class Node
     {
         public object Value { get; set; }
         public Node? nextNode;

@@ -31,13 +31,6 @@ namespace LinkedList
             }
             
         }
-
-        public void InsertAfter(object argNewNode, object argPreviousNode)
-        {
-            Node PreviousNode = new Node(GetNode(argPreviousNode), null);
-            Node NewNode = new Node(argNewNode, PreviousNode?.nextNode);
-            PreviousNode.nextNode = NewNode;
-        }
         
         public void insertAt(object value, int position)
         {
@@ -63,38 +56,9 @@ namespace LinkedList
             Node node = new Node(value, currentNode?.nextNode);
             currentNode.nextNode = node;
         }
-        public Node GetNode(object node)
-        {
-            Node currentNode = head;
-            while (currentNode.Value!.Equals(node))
-            {
-                if (currentNode.nextNode == null)
-                {
-                    return null;
-                }
-                currentNode = currentNode.nextNode;
-            }
-            return currentNode;
-        }
-        public void DeleteFirst()
+        public void deleteFirst()
         {
             head = head.nextNode;
-        }
-        public bool DeleteNode(object argNode)
-        {
-            Node currentNode = head;
-            Node previousNode = head;
-            while (currentNode!.Equals(argNode))
-            {
-                if (currentNode.nextNode == null)
-                {
-                    return false;
-                }
-                previousNode = currentNode;
-                currentNode = currentNode?.nextNode;
-            }
-            previousNode.nextNode = currentNode.nextNode ?? null;
-            return true;
         }
         public int count()
         {
