@@ -119,9 +119,32 @@ namespace LinkedList
             }
             Console.WriteLine(printString);
         }
-        public void SwitchNodes()
+        public Node GetPreviousNode(object argData)
         {
-
+            Node currentNode = head;
+            Node previousNode = head;
+            while(!currentNode.Value.Equals(argData))
+            {
+                if(currentNode.nextNode == null)
+                {
+                    return null;
+                }
+                previousNode = currentNode;
+                currentNode = currentNode.nextNode;
+            }
+            return previousNode;
+        }
+        public void SwitchNodes(Node argFirstNode, Node argSecondNode)
+        {
+            Node previousFirstNode = GetPreviousNode(argFirstNode.Value) ?? null;
+            Node previousSecondNode = GetPreviousNode(argSecondNode.Value) ?? null;
+            if (previousFirstNode != null && previousSecondNode != null)
+            {
+                Node firstNode = new Node(argFirstNode.Value, previousSecondNode.nextNode.nextNode);
+                Node secondNode = new Node(argSecondNode.Value, previousFirstNode.nextNode.nextNode);
+                previousFirstNode.nextNode = secondNode;
+                previousSecondNode.nextNode = firstNode;
+            }
         }
     }
 }

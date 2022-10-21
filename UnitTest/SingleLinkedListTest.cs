@@ -9,7 +9,6 @@ namespace UnitTest
         public void Setup()
         {
         }
-
         [Test]
         public void InsertLast_MultipleElements_ElementsAddedAtLastPosition()
         {
@@ -22,7 +21,6 @@ namespace UnitTest
             Assert.AreEqual(node.Value, 0);
             Assert.AreEqual(node.nextNode.Value, 1);
         }
-
         [Test]
         public void InsertFirst_MultipleElements_ElementIsAddedAtFirstPosition()
         {
@@ -34,7 +32,6 @@ namespace UnitTest
             Assert.AreEqual(0, node.Value);
             Assert.AreEqual(1, node.nextNode.Value);
         }
-
         [Test]
         public void InsertAfter_MultipleElements_ElementIsAddedAtRightPosition()
         {
@@ -66,11 +63,88 @@ namespace UnitTest
             int i = linkedList.Count();
             Assert.AreEqual(0, i);
         }
-
         [Test]
         public void DeleteNode_EmtyList_NoExeptionIsThrown()
         {
             LinkedList.LinkedList linkedList = new LinkedList.LinkedList();
+        }
+        [Test]
+        public void GetPreviousNode_MultipleElements_GetRightNode()
+        {
+            var linkedList = new LinkedList.LinkedList();
+            linkedList.InsertLast(0);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(2);
+            var node = linkedList.GetPreviousNode(2);
+            Assert.AreEqual(1, node.Value);
+        }
+        [Test]
+        public void SwitchNodes_MultipleElements_SwitchedCorrect()
+        {
+            var linkedList = new LinkedList.LinkedList();
+            linkedList.InsertLast(0);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(2);
+            linkedList.InsertLast(3);
+            linkedList.InsertLast(4);
+            linkedList.InsertLast(5);
+            var node2 = linkedList.GetNode(2);
+            var node4 = linkedList.GetNode(4);
+            linkedList.SwitchNodes(node2, node4);
+            var node1 = linkedList.GetNode(1);
+            Assert.AreEqual(4, node1.nextNode.Value);
+            Assert.AreEqual(2, node1.nextNode.nextNode.nextNode.Value);
+        }
+        [Test]
+        public void SwitchNodes_MultipleElements_FirstNodeDoesNotExists()
+        {
+            var linkedList = new LinkedList.LinkedList();
+            linkedList.InsertLast(0);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(2);
+            linkedList.InsertLast(3);
+            linkedList.InsertLast(4);
+            linkedList.InsertLast(5);
+            var node2 = new Node(9, null);
+            var node4 = linkedList.GetNode(4);
+            linkedList.SwitchNodes(node2, node4);
+            var node1 = linkedList.GetNode(1);
+            Assert.AreEqual(2, node1.nextNode.Value);
+            Assert.AreEqual(4, node1.nextNode.nextNode.nextNode.Value);
+        }
+        [Test]
+        public void SwitchNodes_MultipleElements_SecondNodeDoesNotExists()
+        {
+            var linkedList = new LinkedList.LinkedList();
+            linkedList.InsertLast(0);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(2);
+            linkedList.InsertLast(3);
+            linkedList.InsertLast(4);
+            linkedList.InsertLast(5);
+            var node2 = linkedList.GetNode(2);
+            var node4 = new Node(9, null);
+            linkedList.SwitchNodes(node2, node4);
+            var node1 = linkedList.GetNode(1);
+            Assert.AreEqual(2, node1.nextNode.Value);
+            Assert.AreEqual(4, node1.nextNode.nextNode.nextNode.Value);
+        }
+        [Test]
+        public void SwitchNodes_MultipleElements_BothNodesDontExist()
+        {
+            var linkedList = new LinkedList.LinkedList();
+            linkedList.InsertLast(0);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(2);
+            linkedList.InsertLast(3);
+            linkedList.InsertLast(4);
+            linkedList.InsertLast(5);
+            var node2 = new Node(8, null);
+            var node4 = new Node(9, null);
+            linkedList.SwitchNodes(node2, node4);
+            var node1 = linkedList.GetNode(1);
+            Assert.AreEqual(2, node1.nextNode.Value);
+            Assert.AreEqual(4, node1.nextNode.nextNode.nextNode.Value);
         }
     }
 }
