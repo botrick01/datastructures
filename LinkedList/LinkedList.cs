@@ -9,11 +9,11 @@ namespace LinkedList
     public class LinkedList
     {
         private Node head;
-        public void insertFirst(object value)
+        public void InsertFirst(object value)
         {
             head = new Node(value, head);
         }
-        public void insertLast(object value)
+        public void InsertLast(object value)
         {
             Node node = new Node(value, null);
             if(head == null)
@@ -32,11 +32,11 @@ namespace LinkedList
             
         }
         
-        public void insertAt(object value, int position)
+        public void InsertAt(object value, int position)
         {
             if (position == 0)
             {
-                insertFirst(value);
+                InsertFirst(value);
                 return;
             }
             int count = 0;
@@ -56,11 +56,11 @@ namespace LinkedList
             Node node = new Node(value, currentNode?.nextNode);
             currentNode.nextNode = node;
         }
-        public void deleteFirst()
+        public void DeleteFirst()
         {
             head = head.nextNode;
         }
-        public int count()
+        public int Count()
         {
             Node node = head;
             int i = 0;
@@ -72,7 +72,7 @@ namespace LinkedList
 
             return i;
         }
-        public void printAllNodes()
+        public void PrintAllNodes()
         {
             Node current = head;
             String printString = "";
@@ -82,6 +82,10 @@ namespace LinkedList
                 current = current.nextNode;
             }
             Console.WriteLine(printString);
+        }
+        public void SwitchNodes()
+        {
+
         }
     }
 }
