@@ -53,9 +53,9 @@ namespace UnitTest
             linkedList.InsertFirst(2);
             linkedList.InsertFirst(1);
             linkedList.InsertFirst(0);
-            linkedList.DeleteNode(0);
-            var node = linkedList.GetNode(0);
-            Assert.AreEqual(null, node.Value);
+            linkedList.DeleteNode(1);
+            var node = linkedList.GetNode(1);
+            Assert.AreEqual(null, node?.Value);
         }
         [Test]
         public void DeleteNode_OneElement_HeadIsDeleted()
@@ -63,7 +63,14 @@ namespace UnitTest
             LinkedList.LinkedList linkedList = new LinkedList.LinkedList();
             linkedList.InsertFirst(0);
             linkedList.DeleteNode(0);
-            Assert.AreEqual(0, linkedList.Count);
+            int i = linkedList.Count();
+            Assert.AreEqual(0, i);
+        }
+
+        [Test]
+        public void DeleteNode_EmtyList_NoExeptionIsThrown()
+        {
+            LinkedList.LinkedList linkedList = new LinkedList.LinkedList();
         }
     }
 }
