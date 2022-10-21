@@ -9,11 +9,11 @@ namespace LinkedList
     public class LinkedList
     {
         private Node head;
-        public void insertFirst(object value)
+        public void InsertFirst(object value)
         {
             head = new Node(value, head);
         }
-        public void insertLast(object value)
+        public void InsertLast(object value)
         {
             Node node = new Node(value, null);
             if(head == null)
@@ -34,16 +34,16 @@ namespace LinkedList
 
         public void InsertAfter(object argNewNode, object argPreviousNode)
         {
-            Node PreviousNode = new Node(GetNode(argPreviousNode), null);
+            Node PreviousNode = GetNode(argPreviousNode);
             Node NewNode = new Node(argNewNode, PreviousNode?.nextNode);
             PreviousNode.nextNode = NewNode;
         }
         
-        public void insertAt(object value, int position)
+        public void InsertAt(object value, int position)
         {
             if (position == 0)
             {
-                insertFirst(value);
+                InsertFirst(value);
                 return;
             }
             int count = 0;
@@ -63,10 +63,10 @@ namespace LinkedList
             Node node = new Node(value, currentNode?.nextNode);
             currentNode.nextNode = node;
         }
-        public Node GetNode(object node)
+        public Node GetNode(object value)
         {
             Node currentNode = head;
-            while (currentNode.Value!.Equals(node))
+            while (!currentNode.Value.Equals(value))
             {
                 if (currentNode.nextNode == null)
                 {
@@ -80,23 +80,23 @@ namespace LinkedList
         {
             head = head.nextNode;
         }
-        public bool DeleteNode(object argNode)
+        public bool DeleteNode(object argValue)
         {
             Node currentNode = head;
             Node previousNode = head;
-            while (currentNode!.Equals(argNode))
+            while (!currentNode.Value.Equals(argValue))
             {
                 if (currentNode.nextNode == null)
                 {
                     return false;
                 }
                 previousNode = currentNode;
-                currentNode = currentNode?.nextNode;
+                currentNode = currentNode.nextNode;
             }
             previousNode.nextNode = currentNode.nextNode ?? null;
             return true;
         }
-        public int count()
+        public int Count()
         {
             Node node = head;
             int i = 0;
@@ -108,7 +108,7 @@ namespace LinkedList
 
             return i;
         }
-        public void printAllNodes()
+        public void PrintAllNodes()
         {
             Node current = head;
             String printString = "";
