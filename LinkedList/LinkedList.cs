@@ -8,7 +8,7 @@ namespace LinkedList
 {
     public class LinkedList
     {
-        private Node head;
+        public Node head { get; private set; }
         public void InsertFirst(object value)
         {
             head = new Node(value, head);
@@ -111,7 +111,7 @@ namespace LinkedList
         public void PrintAllNodes()
         {
             Node current = head;
-            String printString = "";
+            string printString = "";
             while (current != null)
             {
                 printString += current.Value + "\n";
@@ -119,9 +119,64 @@ namespace LinkedList
             }
             Console.WriteLine(printString);
         }
-        public void SwitchNodes()
+        public string stringifyAllNodes()
         {
-
+            Node current = head;
+            string output = "";
+            while (current != null)
+            {
+                output += current.Value + " ";
+                current = current.nextNode;
+            }
+            return output;
+        }
+        public Node GetPreviousNode(object argData)
+        {
+            Node currentNode = head;
+            Node previousNode = head;
+            while(!currentNode.Value.Equals(argData))
+            {
+                if(currentNode.nextNode == null)
+                {
+                    return null;
+                }
+                previousNode = currentNode;
+                currentNode = currentNode.nextNode;
+            }
+            return previousNode;
+        }
+        public void SwitchNodes(Node argFirstNode, Node argSecondNode)
+        {
+            Node previousFirstNode = GetPreviousNode(argFirstNode.Value) ?? null;
+            Node previousSecondNode = GetPreviousNode(argSecondNode.Value) ?? null;
+            if (previousFirstNode != null && previousSecondNode != null)
+            {
+                if (argFirstNode == head)
+                {
+                    Node firstNode = new Node(argFirstNode.Value, head.nextNode);
+                    Node secondNode = new Node(argSecondNode.Value, previousFirstNode.nextNode);
+                    head = secondNode;
+                    previousSecondNode.nextNode = firstNode;
+                }
+                else if (argSecondNode == head)
+                {
+                    Node firstNode = new Node(argFirstNode.Value, previousSecondNode.nextNode);
+                    Node secondNode = new Node(argSecondNode.Value, head.nextNode);
+                    previousFirstNode.nextNode = secondNode;
+                    head = firstNode;
+                }
+                else
+                {
+                    Node firstNode = new Node(argFirstNode.Value, previousSecondNode.nextNode.nextNode);
+                    Node secondNode = new Node(argSecondNode.Value, previousFirstNode.nextNode.nextNode);
+                    previousFirstNode.nextNode = secondNode;
+                    previousSecondNode.nextNode = firstNode;
+                }
+            }
+        }
+        public void SwitchNodeCheaterVersion(Node argFirstNode, Node argSecondNode)
+        {
+            (argFirstNode.Value, argSecondNode.Value) = (argSecondNode.Value, argFirstNode.Value);
         }
     }
 }
