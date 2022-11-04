@@ -3,7 +3,7 @@ using NUnit.Framework;
 
 namespace UnitTest
 {
-    public class Tests
+    public class SingleLinkedListTest
     {
         [SetUp]
         public void Setup()
@@ -92,6 +92,7 @@ namespace UnitTest
             var node4 = linkedList.GetNode(4);
             linkedList.SwitchNodes(node2, node4);
             var node1 = linkedList.GetNode(1);
+            linkedList.PrintAllNodes();
             Assert.AreEqual(4, node1.nextNode.Value);
             Assert.AreEqual(2, node1.nextNode.nextNode.nextNode.Value);
         }
@@ -145,6 +146,23 @@ namespace UnitTest
             var node1 = linkedList.GetNode(1);
             Assert.AreEqual(2, node1.nextNode.Value);
             Assert.AreEqual(4, node1.nextNode.nextNode.nextNode.Value);
+        }
+        [Test]
+        public void SwitchNodes_SwitchFirstAndLastNode_BothNodesDontExist()
+        {
+            var linkedList = new LinkedList.LinkedList();
+            linkedList.InsertLast(0);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(2);
+            linkedList.InsertLast(3);
+            linkedList.InsertLast(4);
+            linkedList.InsertLast(5);
+            var node0 = linkedList.GetNode(0);
+            var node5 = linkedList.GetNode(5);
+            linkedList.SwitchNodes(node0, node5);
+            var node = linkedList.head;
+            Assert.AreEqual(5, node.Value);
+            Assert.AreEqual(0, node.nextNode.nextNode.nextNode.nextNode.nextNode.Value);
         }
     }
 }
