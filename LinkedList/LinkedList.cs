@@ -119,16 +119,18 @@ namespace LinkedList
             }
             Console.WriteLine(printString);
         }
-        public string stringifyAllNodes()
+        public override string ToString()
         {
+
             Node current = head;
-            string output = "";
+            String result = "";
             while (current != null)
             {
-                output += current.Value + " ";
+                result += current.Value + "\n";
                 current = current.nextNode;
             }
-            return output;
+
+            return result;
         }
         public Node GetPreviousNode(object argData)
         {
@@ -140,6 +142,7 @@ namespace LinkedList
                 {
                     return null;
                 }
+
                 previousNode = currentNode;
                 currentNode = currentNode.nextNode;
             }
@@ -174,9 +177,40 @@ namespace LinkedList
                 }
             }
         }
-        public void SwitchNodeCheaterVersion(Node argFirstNode, Node argSecondNode)
+        public void SwitchNodesCheaterVersion(Node argFirstNode, Node argSecondNode)
         {
             (argFirstNode.Value, argSecondNode.Value) = (argSecondNode.Value, argFirstNode.Value);
+        }
+        public void InsertionSortv2() //doesn't function
+        {
+            Node current = head;
+            while(current != null)
+            {
+                for(int cur = (int)current.Value; cur > (int)GetPreviousNode(cur).Value; cur = (int)GetPreviousNode(cur).Value)
+                {
+                    SwitchNodesCheaterVersion(GetPreviousNode(cur), GetNode(cur));
+                }
+                current = current.nextNode;
+            }
+        }
+        public void InsertionSort()
+        {
+            Node currentNode = head.nextNode;
+            while (currentNode != null)
+            {
+
+                for (var cur = head; cur != null; cur = cur.nextNode)
+                {
+                    if (cur == currentNode)
+                        break;
+                    if ((int)cur.Value < (int)currentNode.Value)
+                        continue;
+                    (cur.Value, currentNode.Value) = (currentNode.Value, cur.Value);
+
+                }
+
+                currentNode = currentNode.nextNode;
+            }
         }
     }
 }
