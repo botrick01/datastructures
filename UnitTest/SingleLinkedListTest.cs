@@ -164,5 +164,21 @@ namespace UnitTest
             Assert.AreEqual(5, node.Value);
             Assert.AreEqual(0, node.nextNode.nextNode.nextNode.nextNode.nextNode.Value);
         }
+        [Test]
+        public void TestInsertionSortReverse_SortDecreasing_ListIsInCorrectOrder()
+        {
+            LinkedList.LinkedList linkedList = new LinkedList.LinkedList();
+            linkedList.InsertLast(4);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(13);
+            linkedList.InsertLast(8);
+            linkedList.InsertLast(2);
+            linkedList.InsertionSortReverse();
+            var node = linkedList.head;
+            Assert.AreEqual(13, node.Value);
+            Assert.AreEqual(8, node.nextNode.Value);
+            Assert.AreEqual(4, node.nextNode.nextNode.Value);
+            Assert.AreEqual(1, node.nextNode.nextNode.nextNode.nextNode.Value);
+        }
     }
 }

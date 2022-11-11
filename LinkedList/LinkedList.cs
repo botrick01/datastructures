@@ -212,5 +212,24 @@ namespace LinkedList
                 currentNode = currentNode.nextNode;
             }
         }
+        public void InsertionSortReverse()
+        {
+            Node currentNode = head.nextNode;
+            while (currentNode != null)
+            {
+
+                for (var cur = head; cur != null; cur = cur.nextNode)
+                {
+                    if (cur == currentNode)
+                        break;
+                    if ((int)cur.Value > (int)currentNode.Value)
+                        continue;
+                    (cur.Value, currentNode.Value) = (currentNode.Value, cur.Value);
+
+                }
+
+                currentNode = currentNode.nextNode;
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList", "LinkedList\Li
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack", "Stack\Stack.csproj", "{3D64EE36-D9A7-4BA3-A2E9-88DE084624C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest\UnitTest.csproj", "{DEA41800-7FA3-4B48-8B00-B5DF0FA9F62A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedListTests", "UnitTest\SingleLinkedListTests.csproj", "{DEA41800-7FA3-4B48-8B00-B5DF0FA9F62A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
