@@ -11,9 +11,8 @@ class Program
         linkedList.InsertLast(3);
         linkedList.InsertLast(7);
         linkedList.InsertLast(2);
-        Console.WriteLine(linkedList.GetPreviousNode(5).Value);
         Console.WriteLine(linkedList.ToString());
-        linkedList.InsertionSort();
+        linkedList.InsertionSortReverse();
         Console.WriteLine(linkedList.ToString());
     }
 }
