@@ -1,5 +1,5 @@
 ﻿using LinkedList;
-
+using Common;
 class Program
 {
     static void Main(string[] args)
@@ -11,8 +11,9 @@ class Program
         linkedList.InsertLast(3);
         linkedList.InsertLast(7);
         linkedList.InsertLast(2);
+        linkedList.SetSortStrategy(new InsertionSort());
         Console.WriteLine(linkedList.ToString());
-        linkedList.InsertionSortReverse();
+        linkedList.Sort();
         Console.WriteLine(linkedList.ToString());
     }
 }

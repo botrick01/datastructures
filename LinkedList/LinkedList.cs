@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Common;
 
 namespace LinkedList
 {
-    public class LinkedList
+    public class LinkedList : IMyList
     {
         public Node head { get; private set; }
+        private SortStrategy sortStrategy;
         public void InsertFirst(object value)
         {
             head = new Node(value, head);
@@ -75,6 +77,10 @@ namespace LinkedList
                 currentNode = currentNode.nextNode;
             }
             return currentNode;
+        }
+        public Node GetFirst()
+        {
+            return head;
         }
         public void DeleteFirst()
         {
@@ -230,6 +236,14 @@ namespace LinkedList
 
                 currentNode = currentNode.nextNode;
             }
+        }
+        public void SetSortStrategy(SortStrategy argSortStrategy)
+        {
+            sortStrategy = argSortStrategy;
+        }
+        public void Sort()
+        {
+            sortStrategy.Sort(this);
         }
     }
 }
