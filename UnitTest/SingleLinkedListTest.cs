@@ -200,7 +200,7 @@ namespace UnitTest
             Assert.AreEqual(13, node.nextNode.nextNode.nextNode.nextNode.Value);
         }
         [Test]
-        public void TestBubbleSort_Sort_ListIsInCorrectOrder()
+        public void TestBubbleSort_5UnsortedNodes_ListIsInCorrectOrder()
         {
             Common.LinkedList linkedList = new Common.LinkedList();
             linkedList.InsertLast(4);
@@ -215,6 +215,16 @@ namespace UnitTest
             Assert.AreEqual(2, node.nextNode.Value);
             Assert.AreEqual(4, node.nextNode.nextNode.Value);
             Assert.AreEqual(13, node.nextNode.nextNode.nextNode.nextNode.Value);
+        }
+        [Test]
+        public void TestBubbleSort_SortOneNode_NoExeptionThrown()
+        {
+            Common.LinkedList linkedList = new Common.LinkedList();
+            linkedList.InsertLast(4);
+            linkedList.SetSortStrategy(new BubbleSort());
+            linkedList.Sort();
+            var node = linkedList.GetFirst();
+            Assert.AreEqual(4, node.Value);
         }
     }
 }

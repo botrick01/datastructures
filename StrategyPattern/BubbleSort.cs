@@ -19,7 +19,7 @@ namespace Common
                 {
                     if((int)currentNode.nextNode.Value < (int)currentNode.Value)
                     {
-                        list.SwitchNodesCheaterVersion(currentNode, currentNode.nextNode);
+                        list.SwitchNodes(currentNode, currentNode.nextNode);
                         switches = true;
                     }
                     currentNode = currentNode.nextNode;

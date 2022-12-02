@@ -154,7 +154,7 @@ namespace Common
             }
             return previousNode;
         }
-        public void SwitchNodes(Node argFirstNode, Node argSecondNode)
+        public void SwitchNodesV2(Node argFirstNode, Node argSecondNode)
         {
             Node previousFirstNode = GetPreviousNode(argFirstNode.Value) ?? null;
             Node previousSecondNode = GetPreviousNode(argSecondNode.Value) ?? null;
@@ -183,7 +183,7 @@ namespace Common
                 }
             }
         }
-        public void SwitchNodesCheaterVersion(Node argFirstNode, Node argSecondNode)
+        public void SwitchNodes(Node argFirstNode, Node argSecondNode)
         {
             (argFirstNode.Value, argSecondNode.Value) = (argSecondNode.Value, argFirstNode.Value);
         }
