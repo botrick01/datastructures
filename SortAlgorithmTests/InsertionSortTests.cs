@@ -13,7 +13,7 @@ namespace SortAlgorithmTests
         [Test]
         public void TestInsertionSortReverse_SortDecreasing_ListIsInCorrectOrder()
         {
-            Common.LinkedList linkedList = new Common.LinkedList();
+            var linkedList = new Common.LinkedList();
             linkedList.InsertLast(4);
             linkedList.InsertLast(1);
             linkedList.InsertLast(13);
