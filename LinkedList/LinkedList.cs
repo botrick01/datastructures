@@ -205,5 +205,9 @@ namespace Common
         {
             sortStrategy.Sort(this);
         }
+        public void SortDescending()
+        {
+            sortStrategy.SortDescending(this);
+        }
     }
 }

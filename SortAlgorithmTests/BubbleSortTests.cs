@@ -50,8 +50,8 @@ namespace SortAlgorithmTests
             linkedList.InsertLast(1);
             linkedList.InsertLast(9);
             linkedList.InsertLast(3);
-            linkedList.SetSortStrategy(new BubbleSortReverse());
-            linkedList.Sort();
+            linkedList.SetSortStrategy(new BubbleSort());
+            linkedList.SortDescending();
             var node = linkedList.GetFirst();
             Assert.AreEqual(node.Value, 9);
             Assert.AreEqual(node.nextNode.Value, 5);
