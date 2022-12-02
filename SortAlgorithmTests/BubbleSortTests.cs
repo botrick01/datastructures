@@ -41,5 +41,23 @@ namespace SortAlgorithmTests
             var node = linkedList.GetFirst();
             Assert.AreEqual(4, node.Value);
         }
+        [Test]
+        public void TestBubbleSortReverse_5UnsortedNodes_ListIsInCorrectOrder()
+        {
+            var linkedList = new Common.LinkedList();
+            linkedList.InsertLast(2);
+            linkedList.InsertLast(5);
+            linkedList.InsertLast(1);
+            linkedList.InsertLast(9);
+            linkedList.InsertLast(3);
+            linkedList.SetSortStrategy(new BubbleSort());
+            linkedList.SortDescending();
+            var node = linkedList.GetFirst();
+            Assert.AreEqual(node.Value, 9);
+            Assert.AreEqual(node.nextNode.Value, 5);
+            Assert.AreEqual(node.nextNode.nextNode.Value, 3);
+            Assert.AreEqual(node.nextNode.nextNode.nextNode.Value, 2);
+            Assert.AreEqual(node.nextNode.nextNode.nextNode.nextNode.Value, 1);
+        }
     }
 }

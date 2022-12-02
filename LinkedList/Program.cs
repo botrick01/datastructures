@@ -13,7 +13,7 @@ class Program
         linkedList.InsertLast(2);
         linkedList.SetSortStrategy(new BubbleSort());
         Console.WriteLine(linkedList.ToString());
-        linkedList.Sort();
+        linkedList.SortDescending();
         Console.WriteLine(linkedList.ToString());
     }
 }

@@ -10,18 +10,38 @@ namespace Common
     {
         public override void Sort(IMyList list)
         {
+            BubbleSortStrategy(list, false);
+        }
+        public override void SortDescending(IMyList list)
+        {
+            BubbleSortStrategy(list, true);
+        }
+        public void BubbleSortStrategy(IMyList list, bool descending)
+        {
             bool switches = true;
-            while(switches)
+            while (switches)
             {
                 Node currentNode = list.GetFirst();
                 switches = false;
-                while(currentNode.nextNode != null)
+                while (currentNode.nextNode != null)
                 {
-                    if((int)currentNode.nextNode.Value < (int)currentNode.Value)
+                    if(descending)
                     {
-                        list.SwitchNodes(currentNode, currentNode.nextNode);
-                        switches = true;
+                        if ((int)currentNode.nextNode.Value > (int)currentNode.Value)
+                        {
+                            list.SwitchNodes(currentNode, currentNode.nextNode);
+                            switches = true;
+                        }
                     }
+                    else
+                    {
+                        if ((int)currentNode.nextNode.Value < (int)currentNode.Value)
+                        {
+                            list.SwitchNodes(currentNode, currentNode.nextNode);
+                            switches = true;
+                        }
+                    }
+                    
                     currentNode = currentNode.nextNode;
                 }
             }

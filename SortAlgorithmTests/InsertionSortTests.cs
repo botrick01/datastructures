@@ -13,14 +13,14 @@ namespace SortAlgorithmTests
         [Test]
         public void TestInsertionSortReverse_SortDecreasing_ListIsInCorrectOrder()
         {
-            Common.LinkedList linkedList = new Common.LinkedList();
+            var linkedList = new Common.LinkedList();
             linkedList.InsertLast(4);
             linkedList.InsertLast(1);
             linkedList.InsertLast(13);
             linkedList.InsertLast(8);
             linkedList.InsertLast(2);
-            linkedList.SetSortStrategy(new InsertionSortReverse());
-            linkedList.Sort();
+            linkedList.SetSortStrategy(new InsertionSort());
+            linkedList.SortDescending();
             var node = linkedList.GetFirst();
             Assert.AreEqual(13, node.Value);
             Assert.AreEqual(8, node.nextNode.Value);
