@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Common;
 
-namespace LinkedList
+namespace Common
 {
     public class LinkedList : IMyList
     {
@@ -154,7 +154,7 @@ namespace LinkedList
             }
             return previousNode;
         }
-        public void SwitchNodes(Node argFirstNode, Node argSecondNode)
+        public void SwitchNodesV2(Node argFirstNode, Node argSecondNode)
         {
             Node previousFirstNode = GetPreviousNode(argFirstNode.Value) ?? null;
             Node previousSecondNode = GetPreviousNode(argSecondNode.Value) ?? null;
@@ -183,59 +183,9 @@ namespace LinkedList
                 }
             }
         }
-        public void SwitchNodesCheaterVersion(Node argFirstNode, Node argSecondNode)
+        public void SwitchNodes(Node argFirstNode, Node argSecondNode)
         {
             (argFirstNode.Value, argSecondNode.Value) = (argSecondNode.Value, argFirstNode.Value);
-        }
-        public void InsertionSortv2() //doesn't function
-        {
-            Node current = head;
-            while(current != null)
-            {
-                for(int cur = (int)current.Value; cur > (int)GetPreviousNode(cur).Value; cur = (int)GetPreviousNode(cur).Value)
-                {
-                    SwitchNodesCheaterVersion(GetPreviousNode(cur), GetNode(cur));
-                }
-                current = current.nextNode;
-            }
-        }
-        public void InsertionSort()
-        {
-            Node currentNode = head.nextNode;
-            while (currentNode != null)
-            {
-
-                for (var cur = head; cur != null; cur = cur.nextNode)
-                {
-                    if (cur == currentNode)
-                        break;
-                    if ((int)cur.Value < (int)currentNode.Value)
-                        continue;
-                    (cur.Value, currentNode.Value) = (currentNode.Value, cur.Value);
-
-                }
-
-                currentNode = currentNode.nextNode;
-            }
-        }
-        public void InsertionSortReverse()
-        {
-            Node currentNode = head.nextNode;
-            while (currentNode != null)
-            {
-
-                for (var cur = head; cur != null; cur = cur.nextNode)
-                {
-                    if (cur == currentNode)
-                        break;
-                    if ((int)cur.Value > (int)currentNode.Value)
-                        continue;
-                    (cur.Value, currentNode.Value) = (currentNode.Value, cur.Value);
-
-                }
-
-                currentNode = currentNode.nextNode;
-            }
         }
         public void SetSortStrategy(SortStrategy argSortStrategy)
         {
