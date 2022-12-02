@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LinkedList\LinkedList.csproj" />
+    <ProjectReference Include="..\StrategyPattern\Common.csproj" />
   </ItemGroup>
 
 </Project>

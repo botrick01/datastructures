@@ -11,9 +11,9 @@ class Program
         linkedList.InsertLast(3);
         linkedList.InsertLast(7);
         linkedList.InsertLast(2);
-        linkedList.SetSortStrategy(new BubbleSortReverse());
+        linkedList.SetSortStrategy(new BubbleSort());
         Console.WriteLine(linkedList.ToString());
-        linkedList.Sort();
+        linkedList.SortDescending();
         Console.WriteLine(linkedList.ToString());
     }
 }

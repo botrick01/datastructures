@@ -11,6 +11,14 @@ namespace Common
     {
         public override void Sort(IMyList list)
         {
+            InsertionSortStrategy(list, false);
+        }
+        public override void SortDescending(IMyList list)
+        {
+            InsertionSortStrategy(list, true);
+        }
+        public void InsertionSortStrategy(IMyList list, bool reverse)
+        {
             Node currentNode = list.GetFirst().nextNode;
             while (currentNode != null)
             {
