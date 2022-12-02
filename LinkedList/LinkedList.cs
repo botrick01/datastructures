@@ -86,6 +86,16 @@ namespace Common
         {
             head = head.nextNode;
         }
+        public Node DeleteLast()
+        {
+            Node current = head;
+            while(current.nextNode != null)
+            {
+                current = current.nextNode;
+            }
+            GetPreviousNode(current).nextNode = null;
+            return current;
+        }
         public bool DeleteNode(object argValue)
         {
             Node currentNode = head;
