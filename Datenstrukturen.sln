@@ -13,11 +13,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedListTests", "Un
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "StrategyPattern\Common.csproj", "{98A5CFF4-5C37-4CA7-B219-C5F9DEA9ABEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleLinkedListBasedStack", "SingleLinkedListBasedStack\SingleLinkedListBasedStack.csproj", "{4E67E025-5B7B-4E2F-9BCE-C0BDC7FC30B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedListBasedStack", "SingleLinkedListBasedStack\SingleLinkedListBasedStack.csproj", "{4E67E025-5B7B-4E2F-9BCE-C0BDC7FC30B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortAlgorithmTests", "SortAlgorithmTests\SortAlgorithmTests.csproj", "{ACCC6C26-7EF8-47FD-87F2-094D6CAB4654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortAlgorithmTests", "SortAlgorithmTests\SortAlgorithmTests.csproj", "{ACCC6C26-7EF8-47FD-87F2-094D6CAB4654}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleLinkedListBasedStackTests", "SingleLinkedListBasedStackTests\SingleLinkedListBasedStackTests.csproj", "{7EEA8B65-506D-421A-A85E-7A27E6003B58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedListBasedStackTests", "SingleLinkedListBasedStackTests\SingleLinkedListBasedStackTests.csproj", "{7EEA8B65-506D-421A-A85E-7A27E6003B58}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "Queue\Queue.csproj", "{A08825AB-FFDE-4F08-9982-9E239103BCBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatastructurTests", "DatastructurTests\DatastructurTests.csproj", "{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +61,14 @@ Global
 		{7EEA8B65-506D-421A-A85E-7A27E6003B58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EEA8B65-506D-421A-A85E-7A27E6003B58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EEA8B65-506D-421A-A85E-7A27E6003B58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A08825AB-FFDE-4F08-9982-9E239103BCBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A08825AB-FFDE-4F08-9982-9E239103BCBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A08825AB-FFDE-4F08-9982-9E239103BCBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A08825AB-FFDE-4F08-9982-9E239103BCBC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
