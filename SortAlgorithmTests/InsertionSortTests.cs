@@ -19,7 +19,7 @@ namespace SortAlgorithmTests
             linkedList.InsertLast(13);
             linkedList.InsertLast(8);
             linkedList.InsertLast(2);
-            linkedList.SetSortStrategy(new InsertionSort());
+            linkedList.SetSortStrategy(FactoryPattern.GetSortStrategy("InsertionSort"));
             linkedList.SortDescending();
             var node = linkedList.GetFirst();
             Assert.AreEqual(13, node.Value);

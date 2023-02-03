@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedListBasedStackT
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "Queue\Queue.csproj", "{A08825AB-FFDE-4F08-9982-9E239103BCBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatastructurTests", "DatastructurTests\DatastructurTests.csproj", "{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatastructurTests", "DatastructurTests\DatastructurTests.csproj", "{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tree", "tree\tree.csproj", "{5EE0DC5D-4311-4AEB-B233-5E5D8866D013}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5EE0DC5D-4311-4AEB-B233-5E5D8866D013}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5EE0DC5D-4311-4AEB-B233-5E5D8866D013}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5EE0DC5D-4311-4AEB-B233-5E5D8866D013}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5EE0DC5D-4311-4AEB-B233-5E5D8866D013}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
