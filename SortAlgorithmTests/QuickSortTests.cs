@@ -18,7 +18,7 @@ namespace SortAlgorithmTests
         {
             QuickSort quickSort = new QuickSort();
             int[] array = { 8, 6, 3, 7, 2, 9, 1, 4 };
-            QuickSort.Sort(array, 1, array.Length - 1);
+            QuickSort.Sort(array, 0, array.Length - 1);
             Assert.AreEqual(array[0], 1);
             Assert.AreEqual(array[1], 2);
             Assert.AreEqual(array[2], 3);
@@ -32,37 +32,54 @@ namespace SortAlgorithmTests
 
     public class QuickSort
     {
-        public static int[] Sort(int[] array, int leftIndex, int rightIndex)
+        public static void Sort(int[] array, int leftIndex, int rightIndex)
         {
-            var i = leftIndex;
-            var j = rightIndex;
-            var pivot = array[leftIndex];
-            while (i <= j)
+            if (leftIndex < rightIndex)
             {
-                while (array[i] < pivot)
-                {
-                    i++;
-                }
+                int pivot = Partition(array, leftIndex, rightIndex);
 
-                while (array[j] > pivot)
+                if (pivot > 1)
                 {
-                    j--;
+                    Sort(array, leftIndex, pivot - 1);
                 }
-                if (i <= j)
+                if (pivot + 1 < rightIndex)
                 {
-                    int temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                    i++;
-                    j--;
+                    Sort(array, pivot + 1, rightIndex);
                 }
             }
 
-            if (leftIndex < j)
-                Sort(array, leftIndex, j);
-            if (i < rightIndex)
-                Sort(array, i, rightIndex);
-            return array;
+        }
+        private static int Partition(int[] arr, int left, int right)
+        {
+            int pivot = arr[left];
+            while (true)
+            {
+
+                while (arr[left] < pivot)
+                {
+                    left++;
+                }
+
+                while (arr[right] > pivot)
+                {
+                    right--;
+                }
+
+                if (left < right)
+                {
+                    if (arr[left] == arr[right]) return right;
+
+                    int temp = arr[left];
+                    arr[left] = arr[right];
+                    arr[right] = temp;
+
+
+                }
+                else
+                {
+                    return right;
+                }
+            }
         }
     }
 }
