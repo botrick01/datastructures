@@ -23,9 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Queue", "Queue\Queue.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DatastructurTests", "DatastructurTests\DatastructurTests.csproj", "{1DEFE9C2-0E72-451C-9E12-020B891CEFF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tree", "tree\tree.csproj", "{5EE0DC5D-4311-4AEB-B233-5E5D8866D013}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tree", "tree\tree.csproj", "{5EE0DC5D-4311-4AEB-B233-5E5D8866D013}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeTests", "TreeTests\TreeTests.csproj", "{7B4F837E-29E2-41DF-87EE-332C830431D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeTests", "TreeTests\TreeTests.csproj", "{7B4F837E-29E2-41DF-87EE-332C830431D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackTest", "StackTest\StackTest.csproj", "{FD9CB386-1765-4E10-8C96-5AFFA03F602C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{7B4F837E-29E2-41DF-87EE-332C830431D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B4F837E-29E2-41DF-87EE-332C830431D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B4F837E-29E2-41DF-87EE-332C830431D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9CB386-1765-4E10-8C96-5AFFA03F602C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9CB386-1765-4E10-8C96-5AFFA03F602C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9CB386-1765-4E10-8C96-5AFFA03F602C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9CB386-1765-4E10-8C96-5AFFA03F602C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

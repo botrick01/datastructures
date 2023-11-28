@@ -17,8 +17,8 @@ namespace Common
         }
         public T pop()
         {
-            T item = Stack[Stack.Count];
-            Stack.RemoveAt(Stack.Count);
+            T item = Stack[Stack.Count - 1];
+            Stack.RemoveAt(Stack.Count - 1);
             return item;
         }
         public int size()
